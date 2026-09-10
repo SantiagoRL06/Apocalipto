@@ -4,103 +4,177 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guía de Supervivencia Z</title>
-    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Estilos base de Persona 1 -->
+    <link rel="stylesheet" href="css/base.css">
+    <!-- Estilos de la sección Zonas Seguras (Persona 1) -->
+    <link rel="stylesheet" href="css/zonas-seguras.css">
+    <!-- Estilos de las demás personas -->
+    <link rel="stylesheet" href="css/recursos.css">
+    <link rel="stylesheet" href="css/peligro-modo-oscuro.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body> 
     <header>
-        <h1>Guía de Supervivencia Z</h1>
+        <div class="header-contenedor">
+            <a href="#" class="marca">
+                <img src="Img/general/logo.jpg" alt="Logo Guía de Supervivencia Zombie" class="site-logo">
+                <h1>SURVIVE.ZOMBIE</h1>
+            </a>
 
-
-        <button id="toggle-modo" class="boton-modo" aria-label="Cambiar entre modo claro y oscuro" aria-pressed="false">
-  <span class="icono-modo icono-sol" aria-hidden="true">☀</span>
-  <span class="icono-modo icono-luna" aria-hidden="true">☾</span>
-</button>
+            <nav class="nav-principal" id="nav-principal">
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#zonas-seguras">Zonas Seguras</a></li>
+                    <li><a href="#recomendaciones">Recomendaciones</a></li>
+                    <li><a href="#recursos">Recursos</a></li>
+                    <li><a href="#reportar">Reportar</a></li>
+                </ul>
+            </nav>
+        
+            <button id="toggle-modo" class="boton-modo" aria-label="Cambiar entre modo claro y oscuro" aria-pressed="false">
+                <span class="icono-modo icono-sol" aria-hidden="true">☀</span>
+                <span class="icono-modo icono-luna" aria-hidden="true">☾</span>
+            </button>
+        </div>
     </header>
 
-<!--cristian-->
 <main>
-  <section>
-    <h2>recomendaciones de supervivencia</h2>
-    <p> Sigue estas reglas para que sobrevivivas en la zonainfectada</p>
+  <!-- SECCIÓN PERSONA 1: Zonas Seguras -->
+  <section id="zonas-seguras">
+    <h2>Zonas Seguras y Refugios</h2>
+    <p>Consulta los refugios activos en la zona infectada y evalúa su nivel de riesgo antes de trasladarte.</p>
+
+    <div class="contenedor-filtro">
+        <label for="filtro-peligro">Filtrar por nivel de peligro:</label>
+        <select id="filtro-peligro">
+            <option value="todos">Mostrar todos</option>
+            <option value="bajo">Peligro Bajo</option>
+            <option value="medio">Peligro Medio</option>
+            <option value="alto">Peligro Alto</option>
+        </select>
+    </div>
+
+    <div class="grid-zonas">
+        <article class="tarjeta-zona" data-nivel="bajo">
+            <img src="Img/zonas/refugio1.jpg" alt="Refugio Subterráneo Norte">
+            <div class="info-zona">
+                <h3>Refugio Subterráneo Norte</h3>
+                <span class="badge peligro-bajo">Peligro Bajo</span>
+                <p>Búnker militar automatizado con provisiones y filtro de aire funcional.</p>
+                <button class="btn-detalles">Ver detalles</button>
+            </div>
+        </article>
+
+        <article class="tarjeta-zona" data-nivel="medio">
+            <img src="Img/zonas/refugio2.jpg" alt="Estación Central de Trenes">
+            <div class="info-zona">
+                <h3>Estación Central de Trenes</h3>
+                <span class="badge peligro-medio">Peligro Medio</span>
+                <p>Zona resguardada por civiles armados. Recursos limitados.</p>
+                <button class="btn-detalles">Ver detalles</button>
+            </div>
+        </article>
+
+        <article class="tarjeta-zona" data-nivel="alto">
+            <img src="Img/zonas/refugio3.jpg" alt="Puerto Abandonado">
+            <div class="info-zona">
+                <h3>Puerto Abandonado</h3>
+                <span class="badge peligro-alto">Peligro Alto</span>
+                <p>Alta actividad de caminantes en el perímetro exterior.</p>
+                <button class="btn-detalles">Ver detalles</button>
+            </div>
+        </article>
+
+        <article class="tarjeta-zona" data-nivel="bajo">
+            <img src="Img/zonas/refugio4.jpg" alt="Antiguo Fuerte Militar">
+            <div class="info-zona">
+                <h3>Antiguo Fuerte Militar</h3>
+                <span class="badge peligro-bajo">Peligro Bajo</span>
+                <p>Murallas altas de concreto, torretas activas y agua corriente.</p>
+                <button class="btn-detalles">Ver detalles</button>
+            </div>
+        </article>
+    </div>
+  </section>
+
+  <!-- SECCIÓN PERSONA 2: Recomendaciones -->
+  <section id="recomendaciones">
+    <h2>Recomendaciones de supervivencia</h2>
+    <p>Sigue estas reglas para que sobrevivas en la zona infectada</p>
     
-    <ul class= "lista de recomendaciones">
+    <ul class="lista-recomendaciones">
         <li>Evita ruidos innecesarios</li>
-        <li>asegura las entradas y las salidas al anochesser</li>
-        <li>no viajes solo,sie,pre en parejas o grupos</li>
-       </ul>
-  </section>  
+        <li>Asegura las entradas y las salidas al anochecer</li>
+        <li>No viajes solo, siempre en parejas o en grupo</li>
+    </ul>
+  </section>   
 
-
-  <!-- Recursos-->
-   <section id="resursos">
+  <!-- SECCIÓN PERSONA 2: Recursos -->
+  <section id="recursos">
     <h2>Recursos esenciales</h2>
-    <div class="contenedor de recursos">
-    
-    
-        <div class="tarjeta de resurso">
+    <div class="contenedor-recursos">
+        <div class="tarjeta-recurso">
             <h3>Agua potable</h3>
-            <p>Esencial para la hidratacion.reserva 1 litro </p>
+            <p>Importante para la hidratación, lleva un litro.</p>
         </div> 
 
-        <div class="tarjeta de resurso">
+        <div class="tarjeta-recurso">
             <h3>Comida enlatada</h3>
-            <p>alimentos no precederos, verifica el estado de la lata</p>
+            <p>Alimentos no perecederos, verifica el estado de la lata.</p>
         </div> 
 
-
-        <div class="tarjeta de resurso">
-            <h3>Botiquin minimo</h3>
-            <p>contiene vendajes, antisepticos </p>
+        <div class="tarjeta-recurso">
+            <h3>Botiquín mínimo</h3>
+            <p>Contiene vendajes y antisépticos.</p>
         </div> 
 
-        <div class="tarjeta de resurso">
+        <div class="tarjeta-recurso">
             <h3>Arma improvisada</h3>
-            <p>Herramienta de defensa propia para enfrentamientos con un zombie</p>
+            <p>Herramienta de defensa propia para sobrevivir.</p>
         </div> 
     </div>
-</section>
+  </section>
 
-<!--formulario para reporte-->
-
-<section id="reportar">
-    <h2>Reporte de avstamiento Zombie</h2>
+  <!-- SECCIÓN PERSONA 2: Formulario -->
+  <section id="reportar">
+    <h2>Reporte de avistamiento Zombie</h2>
 
     <form id="form-reporte" novalidate>
         <div class="grupo-campo">
             <label for="nombre">Nombre del Sobreviviente *</label>
-          <input type="text" id="nombre" name="nombre">
+            <input type="text" id="nombre" name="nombre">
         </div>
 
-       <div class="grupo-campo">
-        <label for="avistamiento">descripcion del avistamiento *</label>
-        <textarea id="avistamiento" name="avistamiento" rows="4"></textarea>
-       </div>
+        <div class="grupo-campo">
+            <label for="avistamiento">Descripción del avistamiento *</label>
+            <textarea id="avistamiento" name="avistamiento" rows="4"></textarea>
+        </div>
 
-       <div class="grupo-campo">
-        <label for="urgencia">nivel de urgencia *</label>
-        <select id="urgencia" name="urgencia">
-            <option value="">--selecciona el nivel--</option>
-            <option value="baja">(infectados atrapados)</option>
-            <option value="media">(grupo pequeño)</option>
-            <option value="alta">(orda en movimiento)</option>
-        </select>
-      </div>
+        <div class="grupo-campo">
+            <label for="urgencia">Nivel de urgencia *</label>
+            <select id="urgencia" name="urgencia">
+                <option value="">--Selecciona el nivel--</option>
+                <option value="baja">Baja (infectados atrapados)</option>
+                <option value="media">Media (grupo pequeño)</option>
+                <option value="alta">Alta (horda en movimiento)</option>
+            </select>
+        </div>
 
-      <div class="grupo-campo">
-        <label for="contacto"> contacto (telefon sino algo con que te puedan ubicar)</label>
-        <input type="text" id="contacto" name="contacto">
-     </div>
-     
-     <button type="submit" id="btn-enviar">Enviar reporte</button>
+        <div class="grupo-campo">
+            <label for="contacto">Contacto (Teléfono o medio de ubicación)</label>
+            <input type="text" id="contacto" name="contacto">
+        </div>
+      
+        <button type="submit" id="btn-enviar">Enviar reporte</button>
+        <p id="mensaje-estado" class="mensaje-hidden"></p>
+    </form>
+  </section>
+</main>         
 
-     <!--contenedor dinamico para avisos de JS-->
-     <p id="mensaje-estado" class="mensaje-hidden"></p>
-     </form>
-</section>
-</main>        
-       
-<!--Script del formulario de persona 2-->
+<script src="js/filtro-zonas.js"></script>
 <script src="js/formulario.js"></script>
+<script src="js/modo-oscuro-menu.js"></script>
 
 </body>
 </html>
