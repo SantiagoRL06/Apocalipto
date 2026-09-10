@@ -4,23 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guía de Supervivencia Z</title>
-    <!-- Ruta corregida hacia tu CSS -->
+    
+    <!-- Estilos base de Persona 1 -->
+    <link rel="stylesheet" href="css/base.css">
+    <!-- Estilos de la sección Zonas Seguras (Persona 1) -->
+    <link rel="stylesheet" href="css/zonas-seguras.css">
+    <!-- Estilos de las demás personas -->
     <link rel="stylesheet" href="css/recursos.css">
+    <link rel="stylesheet" href="css/peligro-modo-oscuro.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
-
-       
 <body> 
     <header>
-        
-        <div>
-            <a href="" class="marca">
-                <img src="Img/logo.jpg" alt="Logo Guía de Supervivencia Zombie" class="site-logo">
-                <h1>Supervivencia Zombie</h1>
+        <div class="header-contenedor">
+            <a href="#" class="marca">
+                <img src="Img/general/logo.jpg" alt="Logo Guía de Supervivencia Zombie" class="site-logo">
+                <h1>SURVIVE.ZOMBIE</h1>
             </a>
 
             <nav class="nav-principal" id="nav-principal">
                 <ul>
                     <li><a href="#">Inicio</a></li>
+                    <li><a href="#zonas-seguras">Zonas Seguras</a></li>
                     <li><a href="#recomendaciones">Recomendaciones</a></li>
                     <li><a href="#recursos">Recursos</a></li>
                     <li><a href="#reportar">Reportar</a></li>
@@ -28,14 +33,72 @@
             </nav>
         
             <button id="toggle-modo" class="boton-modo" aria-label="Cambiar entre modo claro y oscuro" aria-pressed="false">
-            <span class="icono-modo icono-sol" aria-hidden="true">☀</span>
-            <span class="icono-modo icono-luna" aria-hidden="true">☾</span>
+                <span class="icono-modo icono-sol" aria-hidden="true">☀</span>
+                <span class="icono-modo icono-luna" aria-hidden="true">☾</span>
             </button>
         </div>
     </header>
 
 <main>
-  <!-- id="recomendaciones" para que aplique a CSS -->
+  <!-- SECCIÓN PERSONA 1: Zonas Seguras -->
+  <section id="zonas-seguras">
+    <h2>Zonas Seguras y Refugios</h2>
+    <p>Consulta los refugios activos en la zona infectada y evalúa su nivel de riesgo antes de trasladarte.</p>
+
+    <div class="contenedor-filtro">
+        <label for="filtro-peligro">Filtrar por nivel de peligro:</label>
+        <select id="filtro-peligro">
+            <option value="todos">Mostrar todos</option>
+            <option value="bajo">Peligro Bajo</option>
+            <option value="medio">Peligro Medio</option>
+            <option value="alto">Peligro Alto</option>
+        </select>
+    </div>
+
+    <div class="grid-zonas">
+        <article class="tarjeta-zona" data-nivel="bajo">
+            <img src="Img/zonas/refugio1.jpg" alt="Refugio Subterráneo Norte">
+            <div class="info-zona">
+                <h3>Refugio Subterráneo Norte</h3>
+                <span class="badge peligro-bajo">Peligro Bajo</span>
+                <p>Búnker militar automatizado con provisiones y filtro de aire funcional.</p>
+                <button class="btn-detalles">Ver detalles</button>
+            </div>
+        </article>
+
+        <article class="tarjeta-zona" data-nivel="medio">
+            <img src="Img/zonas/refugio2.jpg" alt="Estación Central de Trenes">
+            <div class="info-zona">
+                <h3>Estación Central de Trenes</h3>
+                <span class="badge peligro-medio">Peligro Medio</span>
+                <p>Zona resguardada por civiles armados. Recursos limitados.</p>
+                <button class="btn-detalles">Ver detalles</button>
+            </div>
+        </article>
+
+        <article class="tarjeta-zona" data-nivel="alto">
+            <img src="Img/zonas/refugio3.jpg" alt="Puerto Abandonado">
+            <div class="info-zona">
+                <h3>Puerto Abandonado</h3>
+                <span class="badge peligro-alto">Peligro Alto</span>
+                <p>Alta actividad de caminantes en el perímetro exterior.</p>
+                <button class="btn-detalles">Ver detalles</button>
+            </div>
+        </article>
+
+        <article class="tarjeta-zona" data-nivel="bajo">
+            <img src="Img/zonas/refugio4.jpg" alt="Antiguo Fuerte Militar">
+            <div class="info-zona">
+                <h3>Antiguo Fuerte Militar</h3>
+                <span class="badge peligro-bajo">Peligro Bajo</span>
+                <p>Murallas altas de concreto, torretas activas y agua corriente.</p>
+                <button class="btn-detalles">Ver detalles</button>
+            </div>
+        </article>
+    </div>
+  </section>
+
+  <!-- SECCIÓN PERSONA 2: Recomendaciones -->
   <section id="recomendaciones">
     <h2>Recomendaciones de supervivencia</h2>
     <p>Sigue estas reglas para que sobrevivas en la zona infectada</p>
@@ -47,14 +110,13 @@
     </ul>
   </section>   
 
-  
+  <!-- SECCIÓN PERSONA 2: Recursos -->
   <section id="recursos">
     <h2>Recursos esenciales</h2>
     <div class="contenedor-recursos">
-    
         <div class="tarjeta-recurso">
             <h3>Agua potable</h3>
-            <p>importante para la hidratación, lleva un litro</p>
+            <p>Importante para la hidratación, lleva un litro.</p>
         </div> 
 
         <div class="tarjeta-recurso">
@@ -64,18 +126,18 @@
 
         <div class="tarjeta-recurso">
             <h3>Botiquín mínimo</h3>
-            <p>Contiene vendajes y antisépticos</p>
+            <p>Contiene vendajes y antisépticos.</p>
         </div> 
 
         <div class="tarjeta-recurso">
             <h3>Arma improvisada</h3>
-            <p>Herramienta de defensa propia para sobrevivir</p>
+            <p>Herramienta de defensa propia para sobrevivir.</p>
         </div> 
     </div>
-</section>
+  </section>
 
-<!-- Formulario para reporte -->
-<section id="reportar">
+  <!-- SECCIÓN PERSONA 2: Formulario -->
+  <section id="reportar">
     <h2>Reporte de avistamiento Zombie</h2>
 
     <form id="form-reporte" novalidate>
@@ -105,15 +167,14 @@
         </div>
       
         <button type="submit" id="btn-enviar">Enviar reporte</button>
-
-        <!-- Contenedor dinámico para avisos de JS -->
         <p id="mensaje-estado" class="mensaje-hidden"></p>
     </form>
-</section>
+  </section>
 </main>         
-        
-<!-- Script del formulario -->
+
+<script src="js/filtro-zonas.js"></script>
 <script src="js/formulario.js"></script>
+<script src="js/modo-oscuro-menu.js"></script>
 
 </body>
 </html>
