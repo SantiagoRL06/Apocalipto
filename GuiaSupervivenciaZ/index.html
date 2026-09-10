@@ -26,12 +26,19 @@
                 <ul>
                     <li><a href="#">Inicio</a></li>
                     <li><a href="#zonas-seguras">Zonas Seguras</a></li>
+                    <li><a href="#niveles-peligro">Niveles de Peligro</a></li>
                     <li><a href="#recomendaciones">Recomendaciones</a></li>
                     <li><a href="#recursos">Recursos</a></li>
                     <li><a href="#reportar">Reportar</a></li>
                 </ul>
             </nav>
         
+            <button id="toggle-menu" class="boton-hamburguesa" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="nav-principal">
+                <span class="linea-hamburguesa"></span>
+                <span class="linea-hamburguesa"></span>
+                <span class="linea-hamburguesa"></span>
+            </button>
+
             <button id="toggle-modo" class="boton-modo" aria-label="Cambiar entre modo claro y oscuro" aria-pressed="false">
                 <span class="icono-modo icono-sol" aria-hidden="true">☀</span>
                 <span class="icono-modo icono-luna" aria-hidden="true">☾</span>
@@ -40,7 +47,67 @@
     </header>
 
 <main>
-  <!-- SECCIÓN PERSONA 1: Zonas Seguras -->
+  <!-- SECCIÓN PERSONA 3: Niveles de Peligro -->
+  <section id="niveles-peligro">
+    <h2>Niveles de peligro por región</h2>
+    <p class="intro-peligro">
+      Cada región se clasifica según la actividad de infectados reportada en las últimas 24 horas.
+      Revisa el nivel antes de planear cualquier desplazamiento.
+    </p>
+   
+    <ul class="lista-regiones">
+      <li class="region" data-nivel="alto">
+        <span class="barra-nivel"></span>
+        <div class="region-info">
+          <h3>Distrito Central</h3>
+          <p>Actividad constante de hordas. Evitar desplazamiento nocturno.</p>
+        </div>
+        <span class="etiqueta-nivel">Alto</span>
+      </li>
+   
+      <li class="region" data-nivel="medio">
+        <span class="barra-nivel"></span>
+        <div class="region-info">
+          <h3>Zona Industrial Este</h3>
+          <p>Avistamientos esporádicos. Moverse en grupo y con luz.</p>
+        </div>
+        <span class="etiqueta-nivel">Medio</span>
+      </li>
+   
+      <li class="region" data-nivel="bajo">
+        <span class="barra-nivel"></span>
+        <div class="region-info">
+          <h3>Colinas del Norte</h3>
+          <p>Sin actividad reciente confirmada. Punto de paso recomendado.</p>
+        </div>
+        <span class="etiqueta-nivel">Bajo</span>
+      </li>
+   
+      <li class="region" data-nivel="alto">
+        <span class="barra-nivel"></span>
+        <div class="region-info">
+          <h3>Puerto Abandonado</h3>
+          <p>Zona de alta concentración. Acceso restringido.</p>
+        </div>
+        <span class="etiqueta-nivel">Alto</span>
+      </li>
+    </ul>
+   
+    <div class="leyenda-niveles">
+      <h3>¿Qué significa cada nivel?</h3>
+      <dl>
+        <dt><span class="punto punto-bajo"></span>Bajo</dt>
+        <dd>Sin reportes recientes. Aun así, mantente alerta.</dd>
+   
+        <dt><span class="punto punto-medio"></span>Medio</dt>
+        <dd>Actividad ocasional. Muévete en grupo y evita quedarte solo.</dd>
+   
+        <dt><span class="punto punto-alto"></span>Alto</dt>
+        <dd>Actividad confirmada y constante. Solo ingresar si es estrictamente necesario.</dd>
+      </dl>
+    </div>
+  </section>
+ 
   <section id="zonas-seguras">
     <h2>Zonas Seguras y Refugios</h2>
     <p>Consulta los refugios activos en la zona infectada y evalúa su nivel de riesgo antes de trasladarte.</p>
@@ -171,6 +238,34 @@
     </form>
   </section>
 </main>         
+
+<footer id="pie-pagina">
+  <div class="footer-contenido">
+    <div class="footer-bloque">
+      <h4>SURVIVE.ZOMBIE</h4>
+      <p>Guía comunitaria de supervivencia. Información reportada por sobrevivientes, para sobrevivientes.</p>
+    </div>
+ 
+    <div class="footer-bloque">
+      <h4>Contacto</h4>
+      <p>Radio de emergencia: canal 7.3 FM</p>
+      <p>refugio.central@survive.zombie</p>
+    </div>
+ 
+    <div class="footer-bloque">
+      <h4>Síguenos</h4>
+      <ul class="redes-ficticias">
+        <li><a href="#">Radio Comunitaria</a></li>
+        <li><a href="#">Tablón de Avisos</a></li>
+        <li><a href="#">Red de Refugios</a></li>
+      </ul>
+    </div>
+  </div>
+ 
+  <p class="footer-creditos">
+    Proyecto académico — Guía de Supervivencia Zombie. Desarrollado por Persona 1, Persona 2 y Persona 3.
+  </p>
+</footer>
 
 <script src="js/filtro-zonas.js"></script>
 <script src="js/formulario.js"></script>
