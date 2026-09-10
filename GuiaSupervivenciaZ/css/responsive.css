@@ -1,0 +1,101 @@
+
+/* ---------- Tablet: hasta 900px ---------- */
+@media (max-width: 900px) {
+  #niveles-peligro,
+  #zonas-seguras,
+  #recursos,
+  #recomendaciones,
+  #reportar {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+ 
+  .tarjeta-zona,
+  .tarjeta-recurso,
+  .tarjeta {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .footer-contenido {
+    gap: 1.5rem;
+  }
+}
+
+
+@media (max-width: 640px) {
+ 
+  .boton-hamburguesa {
+    display: flex;
+  }
+
+  nav ul,
+  #nav-principal {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  nav.menu-abierto ul,
+  #nav-principal.menu-abierto {
+    display: flex;
+  }
+
+  
+  .tarjeta-zona,
+  .tarjeta-recurso,
+  .tarjeta {
+    grid-template-columns: 1fr !important;
+  }
+
+  
+  .region {
+    flex-wrap: wrap;
+  }
+
+  .etiqueta-nivel {
+    align-self: flex-start;
+  }
+
+  .leyenda-niveles dl {
+    grid-template-columns: 1fr;
+  }
+
+  .leyenda-niveles dd {
+    margin-bottom: 0.4rem;
+  }
+
+ 
+  .footer-contenido {
+    flex-direction: column;
+  }
+
+  
+  #reportar form {
+    width: 100%;
+  }
+}
+
+
+@media (max-width: 380px) {
+  #niveles-peligro h2,
+  #zonas-seguras h2,
+  #recursos h2,
+  #recomendaciones h2 {
+    font-size: 1.4rem;
+  }
+
+  .boton-modo {
+    width: 2.1rem;
+    height: 2.1rem;
+    font-size: 1rem;
+  }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}

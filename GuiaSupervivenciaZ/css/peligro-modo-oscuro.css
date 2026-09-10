@@ -1,0 +1,288 @@
+
+:root {
+ 
+  --color-fondo: #14110f;
+  --color-texto: #ece4d8;
+  --color-primario: #c9782f;
+  --color-superficie: #1f1b17;
+  --color-borde: #3a332c;
+
+
+  --color-peligro-bajo: #4f7a5a;
+  --color-peligro-medio: #c9782f;
+  --color-peligro-alto: #a4342a;
+
+  --transicion-modo: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* ---------- Modo oscuro ---------- */
+/* Se agrega/quita en <body> desde modo-oscuro-menu.js */
+body.modo-oscuro {
+  --color-fondo: #0b0a09;
+  --color-texto: #ece4d8;
+  --color-superficie: #17140f;
+  --color-borde: #332c24;
+}
+
+body {
+  transition: var(--transicion-modo);
+}
+
+/* ---------- Botón modo claro/oscuro ---------- */
+.boton-modo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-borde);
+  background: var(--color-superficie);
+  color: var(--color-texto);
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: var(--transicion-modo), transform 0.15s ease;
+}
+
+.boton-modo:hover {
+  border-color: var(--color-primario);
+}
+
+.boton-modo:focus-visible {
+  outline: 2px solid var(--color-primario);
+  outline-offset: 2px;
+}
+
+.icono-modo {
+  display: none;
+}
+
+/* En modo claro (por defecto) se ve el sol; en oscuro, la luna */
+.icono-sol { display: inline; }
+.icono-luna { display: none; }
+
+body.modo-oscuro .icono-sol { display: none; }
+body.modo-oscuro .icono-luna { display: inline; }
+
+/* ---------- Botón hamburguesa ---------- */
+.boton-hamburguesa {
+  display: none; /* se activa en responsive.css para pantallas pequeñas */
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 2.25rem;
+  height: 2.25rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.linea-hamburguesa {
+  width: 100%;
+  height: 2px;
+  background: var(--color-texto);
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+/* Estado abierto: la hamburguesa se transforma en X */
+.boton-hamburguesa[aria-expanded="true"] .linea-hamburguesa:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.boton-hamburguesa[aria-expanded="true"] .linea-hamburguesa:nth-child(2) {
+  opacity: 0;
+}
+.boton-hamburguesa[aria-expanded="true"] .linea-hamburguesa:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ---------- Sección de niveles de peligro ---------- */
+#niveles-peligro {
+  background: var(--color-fondo);
+  color: var(--color-texto);
+  padding: 3rem 1.5rem;
+  transition: var(--transicion-modo);
+}
+
+#niveles-peligro h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.intro-peligro {
+  max-width: 60ch;
+  color: var(--color-texto);
+  opacity: 0.8;
+  margin-bottom: 2rem;
+}
+
+.lista-regiones {
+  list-style: none;
+  margin: 0 0 2.5rem 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 70ch;
+}
+
+.region {
+  display: flex;
+  align-items: stretch;
+  gap: 1rem;
+  background: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-radius: 6px;
+  padding: 0.9rem 1rem;
+}
+
+.barra-nivel {
+  width: 5px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.region[data-nivel="bajo"] .barra-nivel { background: var(--color-peligro-bajo); }
+.region[data-nivel="medio"] .barra-nivel { background: var(--color-peligro-medio); }
+.region[data-nivel="alto"] .barra-nivel { background: var(--color-peligro-alto); }
+
+.region-info {
+  flex: 1;
+}
+
+.region-info h3 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.05rem;
+}
+
+.region-info p {
+  margin: 0;
+  opacity: 0.75;
+  font-size: 0.9rem;
+}
+
+.etiqueta-nivel {
+  align-self: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.region[data-nivel="bajo"] .etiqueta-nivel {
+  color: var(--color-peligro-bajo);
+  border: 1px solid var(--color-peligro-bajo);
+}
+.region[data-nivel="medio"] .etiqueta-nivel {
+  color: var(--color-peligro-medio);
+  border: 1px solid var(--color-peligro-medio);
+}
+.region[data-nivel="alto"] .etiqueta-nivel {
+  color: var(--color-peligro-alto);
+  border: 1px solid var(--color-peligro-alto);
+}
+
+/* ---------- Leyenda de niveles ---------- */
+.leyenda-niveles {
+  max-width: 60ch;
+}
+
+.leyenda-niveles h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+}
+
+.leyenda-niveles dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 1rem;
+  row-gap: 0.6rem;
+}
+
+.leyenda-niveles dt {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+}
+
+.leyenda-niveles dd {
+  margin: 0;
+  opacity: 0.8;
+}
+
+.punto {
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.punto-bajo { background: var(--color-peligro-bajo); }
+.punto-medio { background: var(--color-peligro-medio); }
+.punto-alto { background: var(--color-peligro-alto); }
+
+/* ---------- Footer ---------- */
+#pie-pagina {
+  background: var(--color-superficie);
+  color: var(--color-texto);
+  border-top: 1px solid var(--color-borde);
+  padding: 2.5rem 1.5rem 1.5rem;
+  transition: var(--transicion-modo);
+}
+
+.footer-contenido {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto 2rem;
+}
+
+.footer-bloque {
+  flex: 1 1 200px;
+}
+
+.footer-bloque h4 {
+  margin: 0 0 0.6rem 0;
+  color: var(--color-primario);
+  font-size: 1rem;
+}
+
+.footer-bloque p {
+  margin: 0.2rem 0;
+  opacity: 0.75;
+  font-size: 0.9rem;
+}
+
+.redes-ficticias {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.redes-ficticias li {
+  margin-bottom: 0.3rem;
+}
+
+.redes-ficticias a {
+  color: var(--color-texto);
+  opacity: 0.75;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.redes-ficticias a:hover {
+  opacity: 1;
+  color: var(--color-primario);
+}
+
+.footer-creditos {
+  text-align: center;
+  font-size: 0.8rem;
+  opacity: 0.55;
+  border-top: 1px solid var(--color-borde);
+  padding-top: 1rem;
+  margin: 0;
+}
