@@ -6,8 +6,8 @@
     font-family: arial, sans-serif;
 }
 /*texto*/
-.contenedor-recursos ¨{
-    display: 20px;
+.contenedor-recursos {
+    display: flex;
     flex-wrap: wrap;
     gap: 20px;   
 }
@@ -16,6 +16,7 @@
     background-color:#2a2a2a;
     color: #ffffff;
     border: 2px solid #444;
+    border-radius: 8px;
     padding: 15px;
     width: calc(50% - 10px);
     box-sizing: border-box;
@@ -31,9 +32,14 @@
     padding: 20px;
     border-radius: 8px;
 }
-.grupo-campo{
+.grupo-campo {
     margin-bottom: 15px;
-    display: flex0;
+    display: flex;
+    flex-direction: column;
+}
+
+.grupo-campo label{
+    margin-bottom: 15px;
     font-weight: bold;
 }
 .grupo-campo input,
@@ -47,7 +53,7 @@
 }
 /*validacion visual: bordes rojos*/
 .grupo-campo input.campo-error,
-.grupo-campo textarea.campoerror,
+.grupo-campo textarea.campo-error,
 .grupo-campo select.campo-error{
 border-color: #ff4d4d;
 background-color: #3d2222;

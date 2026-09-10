@@ -4,96 +4,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guía de Supervivencia Z</title>
-    <link rel="stylesheet" href="styles.css">
+    <!-- Ruta corregida hacia tu CSS -->
+    <link rel="stylesheet" href="css/recursos.css">
 </head>
 <body> 
     <header>
         <h1>Guía de Supervivencia Z</h1>
     </header>
 
-<!--cristian-->
 <main>
-  <section>
-    <h2>recomendaciones de supervivencia</h2>
-    <p> Sigue estas reglas para que sobrevivivas en la zonainfectada</p>
+  <!-- id="recomendaciones" para que aplique a CSS -->
+  <section id="recomendaciones">
+    <h2>Recomendaciones de supervivencia</h2>
+    <p>Sigue estas reglas para que sobrevivas en la zona infectada</p>
     
-    <ul class= "lista de recomendaciones">
+    <ul class="lista-recomendaciones">
         <li>Evita ruidos innecesarios</li>
-        <li>asegura las entradas y las salidas al anochesser</li>
-        <li>no viajes solo,sie,pre en parejas o grupos</li>
-       </ul>
-  </section>  
+        <li>Asegura las entradas y las salidas al anochecer</li>
+        <li>No viajes solo, siempre en parejas o en grupo</li>
+    </ul>
+  </section>   
 
-
-  <!-- Recursos-->
-   <section id="resursos">
+  
+  <section id="recursos">
     <h2>Recursos esenciales</h2>
-    <div class="contenedor de recursos">
+    <div class="contenedor-recursos">
     
-    
-        <div class="tarjeta de resurso">
+        <div class="tarjeta-recurso">
             <h3>Agua potable</h3>
-            <p>Esencial para la hidratacion.reserva 1 litro </p>
+            <p>importante para la hidratación, lleva un litro</p>
         </div> 
 
-        <div class="tarjeta de resurso">
+        <div class="tarjeta-recurso">
             <h3>Comida enlatada</h3>
-            <p>alimentos no precederos, verifica el estado de la lata</p>
+            <p>Alimentos no perecederos, verifica el estado de la lata.</p>
         </div> 
 
-
-        <div class="tarjeta de resurso">
-            <h3>Botiquin minimo</h3>
-            <p>contiene vendajes, antisepticos </p>
+        <div class="tarjeta-recurso">
+            <h3>Botiquín mínimo</h3>
+            <p>Contiene vendajes y antisépticos</p>
         </div> 
 
-        <div class="tarjeta de resurso">
+        <div class="tarjeta-recurso">
             <h3>Arma improvisada</h3>
-            <p>Herramienta de defensa propia para enfrentamientos con un zombie</p>
+            <p>Herramienta de defensa propia para sobrevivir</p>
         </div> 
     </div>
 </section>
 
-<!--formulario para reporte-->
-
+<!-- Formulario para reporte -->
 <section id="reportar">
-    <h2>Reporte de avstamiento Zombie</h2>
+    <h2>Reporte de avistamiento Zombie</h2>
 
     <form id="form-reporte" novalidate>
         <div class="grupo-campo">
             <label for="nombre">Nombre del Sobreviviente *</label>
-          <input type="text" id="nombre" name="nombre">
+            <input type="text" id="nombre" name="nombre">
         </div>
 
-       <div class="grupo-campo">
-        <label for="avistamiento">descripcion del avistamiento *</label>
-        <textarea id="avistamiento" name="avistamiento" rows="4"></textarea>
-       </div>
+        <div class="grupo-campo">
+            <label for="avistamiento">Descripción del avistamiento *</label>
+            <textarea id="avistamiento" name="avistamiento" rows="4"></textarea>
+        </div>
 
-       <div class="grupo-campo">
-        <label for="urgencia">nivel de urgencia *</label>
-        <select id="urgencia" name="urgencia">
-            <option value="">--selecciona el nivel--</option>
-            <option value="baja">(infectados atrapados)</option>
-            <option value="media">(grupo pequeño)</option>
-            <option value="alta">(orda en movimiento)</option>
-        </select>
-      </div>
+        <div class="grupo-campo">
+            <label for="urgencia">Nivel de urgencia *</label>
+            <select id="urgencia" name="urgencia">
+                <option value="">--Selecciona el nivel--</option>
+                <option value="baja">Baja (infectados atrapados)</option>
+                <option value="media">Media (grupo pequeño)</option>
+                <option value="alta">Alta (horda en movimiento)</option>
+            </select>
+        </div>
 
-      <div class="grupo-campo">
-        <label for="contacto"> contacto (telefon sino algo con que te puedan ubicar)</label>
-        <input type="text" id="contacto" name="contacto">
-     </div>
-     
-     <button type="submit" id="btn-enviar">Enviar reporte</button>
+        <div class="grupo-campo">
+            <label for="contacto">Contacto (Teléfono o medio de ubicación)</label>
+            <input type="text" id="contacto" name="contacto">
+        </div>
+      
+        <button type="submit" id="btn-enviar">Enviar reporte</button>
 
-     <!--contenedor dinamico para avisos de JS-->
-     <p id="mensaje-estado" class="mensaje-hidden"></p>
-     </form>
+        <!-- Contenedor dinámico para avisos de JS -->
+        <p id="mensaje-estado" class="mensaje-hidden"></p>
+    </form>
 </section>
-</main>        
-       
-<!--Script del formulario de persona 2-->
+</main>         
+        
+<!-- Script del formulario -->
 <script src="js/formulario.js"></script>
 
 </body>
