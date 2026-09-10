@@ -1,0 +1,90 @@
+/* ESPACIO DE SECCIONES*/
+#recomendaciones, #recursos, #reportar{
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto 30px auto;
+    font-family: arial, sans-serif;
+}
+/*texto*/
+.contenedor-recursos ¨{
+    display: 20px;
+    flex-wrap: wrap;
+    gap: 20px;   
+}
+
+.tarjeta-recurso{
+    background-color:#2a2a2a;
+    color: #ffffff;
+    border: 2px solid #444;
+    padding: 15px;
+    width: calc(50% - 10px);
+    box-sizing: border-box;
+}
+.tarjeta-recurso h3 {
+    margin-top: 0;
+    color: #28a745 ;   
+}
+/* Formukaruio*/
+#form-reporte {
+    background-color: #1e1e1e ;
+    color: #cfbfbf;
+    padding: 20px;
+    border-radius: 8px;
+}
+.grupo-campo{
+    margin-bottom: 15px;
+    display: flex0;
+    font-weight: bold;
+}
+.grupo-campo input,
+.grupo-campo textarea,
+.grupo-campo select {
+    padding: 10px;
+    border: 2px solid #555;
+    border-radius: 4px;
+    background-color: #333;
+    color: #ffffff;
+}
+/*validacion visual: bordes rojos*/
+.grupo-campo input.campo-error,
+.grupo-campo textarea.campoerror,
+.grupo-campo select.campo-error{
+border-color: #ff4d4d;
+background-color: #3d2222;
+
+}
+/* boton enviar */
+#btn-enviar {
+  background-color: #28a745;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#btn-enviar:hover {
+  background-color: #218838;
+}
+
+/* Estados de respuesta de JavaScript */
+.mensaje-hidden { display: none; }
+
+.mensaje-error-texto {
+  display: block;
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #dc3545;
+  color: white;
+  border-radius: 4px;
+}
+
+.mensaje-exito-texto {
+  display: block;
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  border-radius: 4px;
+}
